@@ -23,6 +23,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+text.txt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -68,6 +69,7 @@ target/
 
 # IPython Notebook
 .ipynb_checkpoints
+/share/
 
 # pyenv
 .python-version
@@ -81,6 +83,14 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
+/bin/
+/include/
+/lib/
+/pip-selfcheck.json
+/pyvenv.cfg
+
+# ipython
+/share/
 
 # Spyder project settings
 .spyderproject
