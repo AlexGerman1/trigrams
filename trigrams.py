@@ -2,22 +2,21 @@
 import io
 
 
-def split_string(f):
-    f = io.open('text.txt', encoding='utf-8')
-    text_data = f.read()
-    f.close()
-    split_string.lst = text_data.split(" ")
-    return split_string.lst
+def load_words(file_path):
+    file_path = io.open('text.txt', encoding='utf-8')
+    text_data = file_path.read()
+    file_path.close()
+    return text_data.split()
 
 
-def main(f, n):
-    split_string(f)
-    for i in split_string.lst:
-        words = {}
-        words = (split_string.lst[0] + " " + split_string.lst[int(1)],
-                 split_string.lst[2])
-        print words
-    return words
+def build_table(words):
+    words_dict = {}
+    # words = load_words(file_path)
+    for i in range(len(words) - 2):
+        a_key = (words[i], words[i + 1])
+        a_value = words[i + 2]
+        words_dict.setdefault(a_key, []).append(a_value)
+    return words_dict
 
 
-main('one two three', 1)
+print(build_table('one two three four one five one two five'.split()))
